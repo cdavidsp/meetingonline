@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnyConnectProfile xmlns="http://schemas.xmlsoap.org/encoding/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://schemas.xmlsoap.org/encoding/ AnyConnectProfile.xsd">
+     <ClientInitialization>
+    <WindowsLogonEnforcement>SingleLocalLogon</WindowsLogonEnforcement>
+    <WindowsVPNEstablishment>AllowRemoteUsers</WindowsVPNEstablishment>
+  </ClientInitialization>
+  <ServerList>
+      <HostEntry>
+      <HostName>VPN_ISBAN_SC</HostName>
+      <HostAddress>isbvpn.isban.es</HostAddress>
+      <UserGroup>isbsc</UserGroup>
+      </HostEntry>
+  </ServerList>
+</AnyConnectProfile>
