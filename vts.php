@@ -7197,15 +7197,9 @@ $lans = array(
                      ); 
 $ls=array(
           "en" => "English",
-          "gr" => "Deutsch",
-          "ru" => "русский",
-          "ch" => "中文",
-          "fa" => "فارسی");
+          "gr" => "Deutsch");
 $sq=array(
           "en" => "en",
-          "gr" => "gr",
-          "ru" => "ru",
-          "ch" => "ch",
-          "fa" => "en");
+          "gr" => "gr");
 
 ?>
