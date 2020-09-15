@@ -2,15 +2,6 @@
 <?php
 
 
-session_start();
-
-if(! isset($_SESSION['user'])) 
-{
-    
-        
-       header('Location: /login.php');
-     
-}
 
 
 if(file_exists('vts.php')){
@@ -45,11 +36,6 @@ $ts_mm=1595156400;
 
 
 
-$user1 = $_SESSION['user'];
-
-$user = $vts[$user1['user']];
-
-
 
 if($cts>$ts_mm){
 
@@ -64,12 +50,6 @@ $big_m = $vms['Video Training Meeting']['meetingURL'];
 
 
 
-
-
-
-$group = trim($user['group']);
-
-$group_m = $vms[$group]['meetingURL'];
 
 $c_lan='en';
 $schedule='VT2020Schedule.pdf';
@@ -135,7 +115,8 @@ Coded by www.creative-tim.com
           <!-- <p>CT</p> -->
         </a>
         <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-         <?=$user['firstName']?>
+         
+         TRAINEE
           <!-- <div class="logo-image-big">
             <img src="assets/img/logo-big.png">
           </div> -->
@@ -158,10 +139,7 @@ Coded by www.creative-tim.com
           
 
           <li class="active-pro">
-            <a href="./logout.php">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>LogOut</p>
-            </a>
+           
           </li>
         </ul>
       </div>
@@ -220,68 +198,45 @@ Coded by www.creative-tim.com
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-md-8">
-            <div class="card ">
-              <div class="card-header ">
-
-
+<div class="col-md-8">
+            <div class="card card-chart">
+              <div class="card-header">
 
 
                    <div class="row">
-                    <div class="col-md-8 ml-auto mr-auto text-center">
+                    <div class="col-md-12 ml-auto mr-auto text-center">
 
-                <h5 class="card-title"><?=$lan['text_1']?></h5>
+                      <h5 class="card-title"> International Training for Elders and Responsible Ones</h5>
                     </div>
                   </div>
 
               </div>
-              <div class="card-body ">
-          
+              <div class="card-body">
 
                 <div class="row">
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        <label><?=$lan['text_2']?></label>
-                        <input type="text" class="form-control" disabled=""  value="<?=$user['user']?>">
-                      </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                      <h6>October 2020
+                      </h6>
                     </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label><?=$lan['text_3']?></label>
-                        <input type="text" class="form-control" disabled="" value="<?=$user['firstName'].' '.$user['lastName']?>">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label for="exampleInputEmail1"><?=$lan['text_4']?></label>
-                        <input type="text" disabled="" class="form-control" value="<?=$user['city']?>">
-                      </div>
+                  </div>
+
+
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                      <a href="20ST_<?=$c_lan?>.pdf" target="_blank" class="btn btn-default btn-round"><?=$lan['text_11']?></a>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col-md-5">
-                      <div class="form-group">
-                        <label><?=$lan['text_5']?></label>
-                        <input type="text" class="form-control" disabled=""  value="<?=$user['email']?>">
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="form-group">
-                        <label><?=$lan['text_6']?></label>
-                        <input type="text" class="form-control" disabled="" value="<?=$user['language']?>">
-                      </div>
-                    </div>
-                    <div class="col-md-3">
-                      <div class="form-group">
-                        <label><?=$lan['text_7']?></label>
-                        <input type="text" class="form-control" disabled="" value="<?=$user['group']?>">
-                      </div>
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <a target="_blank" href="<?=$schedule?>" class="btn btn-default btn-round"><?=$lan['text_18']?></a>
                     </div>
                   </div>
 
+            
+         
 
               </div>
-              <div class="card-footer ">
+             <div class="card-footer ">
                 <hr>
                 <div class="stats">
                   <i class="fa fa-info"></i>
@@ -312,187 +267,29 @@ Coded by www.creative-tim.com
                   </div>
 
                   <div class="row">
-                    <div class="update ml-auto mr-auto ">
-                      <?php 
-                      $a=true;
-
-                      if($a){
-                        ?>
-<a target="_blank" href="<?=$group_m?>" class="btn btn-info btn-round "><?=$lan['text_20']?></a>
-                        <?php
-                      }else
-                      {?>
-
-
-<a target="_blank" href="#" class="btn btn-info btn-round disabled"><?=$lan['text_20']?></a>
-                        <?php
-
-                      }?>
-
-
-
-                      
-                    </div>
-                  </div>
-                  <div class="row">
                     <div class="update ml-auto mr-auto">
                       <a class="btn btn-warning btn-round" href="help.php?l=<?=$c_lan?>" ><?=$lan['text_35']?></a>
                      
                     </div>
                   </div>
               </div>
-              <div class="card-footer ">
+            <div class="card-footer ">
                
                 <hr>
                 <div class="stats">
-                  <i class="fa fa-calendar"></i> <?=$lan['text_10']?>: <?=sizeof($vts)?>
+                  <i class="fa fa-calendar"></i> <?=$lan['text_10']?>: 70
                 </div>
               </div>
+
+
+            
             </div>
           </div>
 
 
 
-        </div>
-        <div class="row">
+
           
-
-          <div class="col-md-7">
-            <div class="card card-chart">
-              <div class="card-header">
-
-
-                   <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-
-                      <h5 class="card-title"> <?=$lan['text_11']?> &  <?=$lan['text_18']?></h5>
-                    </div>
-                  </div>
-
-              </div>
-              <div class="card-body">
-
-
-         
-
-
-                
-                <div class="row">
-                    <div class="ml-4">
-                      <a href="20ST_<?=$c_lan?>.pdf" target="_blank" class="btn btn-default btn-round"><?=$lan['text_11']?></a>
-                    </div>
-
-                    <div class="ml-4">
-                        <a target="_blank" href="<?=$schedule?>" class="btn btn-default btn-round"><?=$lan['text_18']?></a>
-                    </div>
-
-                 
-                    <div class="ml-4">
-                        <a target="_blank" href="<?='sqs/'.$sq[$c_lan].'.pdf'?>" class="btn btn-default btn-round"><?=$lan['text_39']?></a>
-
-
-                    </div>
-                  </div>
-
-         
-
-              </div>
-              <div class="card-footer">
-         
-              </div>
-            </div>
-          </div>
-
-
- <div class="col-md-5">
-            <div class="card card-chart">
-              <div class="card-header">
-                
-
-                   <div class="row">
-                    <div class="col-md-6 ml-auto mr-auto text-center">
-
-                <h5 class="card-title"><?=$lan['text_36']?></h5>
-
-                    </div>
-                  </div>
-
-
-
-              </div>
-              <div class="card-body">
-
-                
-                
-                <div class="row">
-
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message1']=='Y'?'success':'danger'?>" ><?=$lan['text_23']?></h6>
-                    </div>
-
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message2']=='Y'?'success':'danger'?>" ><?=$lan['text_24']?></h6>
-                    </div>
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message3']=='Y'?'success':'danger'?>" ><?=$lan['text_25']?></h6>
-                    </div>
-               </div>
-
-
-                <div class="row">
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message4']=='Y'?'success':'danger'?>" ><?=$lan['text_26']?></h6>
-                    </div>
-
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message5']=='Y'?'success':'danger'?>" ><?=$lan['text_27']?></h6>
-                    </div>
-
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message6']=='Y'?'success':'danger'?>" ><?=$lan['text_28']?></h6>
-                    </div>
-               </div>
-
-
-
-                <div class="row">
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message7']=='Y'?'success':'danger'?>" ><?=$lan['text_29']?></h6>
-                    </div>
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message8']=='Y'?'success':'danger'?>" ><?=$lan['text_30']?></h6>
-                    </div>
-
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message9']=='Y'?'success':'danger'?>" ><?=$lan['text_31']?></h6>
-                    </div>
-
-               </div>
-
-               <div class="row">
-
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message10']=='Y'?'success':'danger'?>" ><?=$lan['text_32']?></h6>
-                    </div>
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message11']=='Y'?'success':'danger'?>" ><?=$lan['text_33']?></h6>
-                    </div>
-                    <div class="ml-3">
-                      <h6 class="text-<?=$user['message12']=='Y'?'success':'danger'?>" ><?=$lan['text_34']?></h6>
-                    </div>
-               </div>
-
-              </div>
-              <div class="card-footer">
-                
-                <hr />
-                <div class="card-stats">
-                  <b class="text-success"> &#9864; <?=$lan['text_37']?></b>  <b class="text-danger"> &#9864; <?=$lan['text_38']?></b>
-
-                </div>
-              </div>
-            </div>
-          </div>
 
 
         </div>
@@ -589,7 +386,7 @@ $st=3*$i;
 <?php
 for($j=1;$j<=3;$j++){
 
-if($cts>=$ts[$st+$j]){
+if($cts>=$ts[$st+$j] && $st+$j<=8){
   ?>
 
                     <div class="ml-1">
@@ -600,7 +397,7 @@ if($cts>=$ts[$st+$j]){
 
 
                       <audio controls>
-                        <source src="a/<?=$c_lan?>/msg_12<?=($st+$j)?>.mp3" type="audio/mpeg">
+                        <source src="" type="audio/mpeg">
 
 
                         Your browser does not support the audio tag.
